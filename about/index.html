@@ -118,6 +118,8 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#about-me">About Me</a></li>
+            <li class="second-level"><a href="#links">Links</a></li>
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -126,7 +128,10 @@
 <p>My name is {{ my_name }}.</p>
 <p>I am a Software Engineer in Chicago and I'm interested in <code>python</code>, <code>vim</code> / <code>neovim</code>,
 <code>scala</code>, <code>SQL</code>, AWS, and big data. I'm also interested in learning more about
-functional programming.</p></div>
+functional programming.</p>
+<h2 id="links">Links</h2>
+<p>Link to my <a href="{{ github.page }}">github</a>.</p>
+<p>Link to my <a href="{{ github.page }}/{{ github.repos.dotfiles }}">dotfiles</a>.</p></div>
         
         
     </div>
