@@ -768,8 +768,8 @@ alternative.</p>
 <p><img alt="zoomify" class="center" src="../img/gitflow.png" /> <em class="img-caption">Fig. 1: Image taken from <a href="https://nvie.com/posts/a-successful-git-branching-model">here</a>.</em>
 <br></p>
 <h3 id="development-lifecycle">Development lifecycle<a class="headerlink" href="#development-lifecycle" title="Permanent link">&para;</a></h3>
-<p>The basic GitFlow workflow is outlined in Fig. 1. GitFlow assumes that your
-deployment lifecycle is like the following:</p>
+<p>The basic GitFlow is outlined in Fig. 1. GitFlow assumes that your deployment
+lifecycle is like the following:</p>
 <ul>
 <li>Work is divided into <a href="https://www.atlassian.com/agile/scrum/sprints">sprints</a> </li>
 <li>During a sprint, developers will work on a handful of features</li>
@@ -886,8 +886,11 @@ git push
 </pre></div>
 </td></tr></table>
 
-<p>Note that you may need to resolve some merge conflicts at this stage. I
-recommend <a href="https://sourcegear.com/diffmerge/">DiffMerge</a> for this.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may need to resolve some merge conflicts at this stage. I recommend
+<a href="https://sourcegear.com/diffmerge/">DiffMerge</a> for this.</p>
+</div>
 <h5 id="step-3-pr-from-feature-branch-into-develop">Step 3: PR from feature branch into develop<a class="headerlink" href="#step-3-pr-from-feature-branch-into-develop" title="Permanent link">&para;</a></h5>
 <p>To merge the feature branch, open a <em>pull request</em> (PR)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> into <code class="codehilite"><span class="err">develop</span></code>. Once the
 PR is approved, merge it and then delete the feature branch on the remote.</p>
@@ -908,7 +911,7 @@ git fetch -p
 <p>The feature is now complete.</p>
 <h4 id="multiple-developers-working-on-a-feature">Multiple developers working on a feature<a class="headerlink" href="#multiple-developers-working-on-a-feature" title="Permanent link">&para;</a></h4>
 <p>If more than one developer is working on the same feature, the process is only
-slightly more complicated than if only one developer is working on the feature.</p>
+slightly more complicated than if one developer is working on the feature.</p>
 <p>Let's say Alice, Bob, and Carol are all working on the feature from above. The
 following is how they would each work together.</p>
 <h5 id="step-1-create-a-feature-branch_1">Step 1: Create a feature branch<a class="headerlink" href="#step-1-create-a-feature-branch_1" title="Permanent link">&para;</a></h5>
