@@ -2,22 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://sanp.github.io/</loc>
-     <lastmod>2019-12-09</lastmod>
+     <lastmod>2019-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://sanp.github.io/about/</loc>
-     <lastmod>2019-12-09</lastmod>
+     <lastmod>2019-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://sanp.github.io/2019/rebasing/</loc>
-     <lastmod>2019-12-09</lastmod>
+     <lastmod>2019-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://sanp.github.io/2019/gitflow/</loc>
-     <lastmod>2019-12-09</lastmod>
+     <loc>https://sanp.github.io/2019/gitflow_1/</loc>
+     <lastmod>2019-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://sanp.github.io/2019/gitflow_2/</loc>
+     <lastmod>2019-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

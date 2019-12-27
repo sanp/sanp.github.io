@@ -1,0 +1,736 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A blog about tech and programming">
+      
+      
+        <link rel="canonical" href="https://sanp.github.io/2019/gitflow_2/">
+      
+      
+        <meta name="author" content="Steve SanPietro">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
+    
+    
+      
+        <title>Gitflow Part 2: Step by step guide to Working on a feature - Sanp's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../style/css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#postsgitflowpart2_title" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://sanp.github.io" title="Sanp's Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Sanp's Blog
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Gitflow Part 2: Step by step guide to Working on a feature
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://sanp.github.io" title="Sanp's Blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Sanp's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      2019
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        2019
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rebasing/" title="Using interactive rebase to ensure a clean git history" class="md-nav__link">
+      Using interactive rebase to ensure a clean git history
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gitflow_1/" title="Gitflow Part 1: Overview of Gitflow" class="md-nav__link">
+      Gitflow Part 1: Overview of Gitflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Gitflow Part 2: Step by step guide to Working on a feature
+      </label>
+    
+    <a href="./" title="Gitflow Part 2: Step by step guide to Working on a feature" class="md-nav__link md-nav__link--active">
+      Gitflow Part 2: Step by step guide to Working on a feature
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gitflow-and-jira" class="md-nav__link">
+    GitFlow and Jira
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-on-a-new-feature-step-by-step-guide" class="md-nav__link">
+    Working on a new feature: step by step guide
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-feature-branch" class="md-nav__link">
+    Step 1: Create a feature branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-an-individual-branch-off-of-the-feature-branch" class="md-nav__link">
+    Step 2: Create an individual branch off of the feature branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-work-on-the-individual-branch-and-push-to-remote-often" class="md-nav__link">
+    Step 3: Work on the individual branch and push to remote often
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-merge-the-individual-branch-back-into-the-feature-branch" class="md-nav__link">
+    Step 4: Merge the individual branch back into the feature branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-pr-from-feature-branch-into-develop" class="md-nav__link">
+    Step 5: PR from feature branch into develop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-clean-up-local-branches" class="md-nav__link">
+    Step 6: Clean up local branches
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gitflow-and-jira" class="md-nav__link">
+    GitFlow and Jira
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-on-a-new-feature-step-by-step-guide" class="md-nav__link">
+    Working on a new feature: step by step guide
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-feature-branch" class="md-nav__link">
+    Step 1: Create a feature branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-an-individual-branch-off-of-the-feature-branch" class="md-nav__link">
+    Step 2: Create an individual branch off of the feature branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-work-on-the-individual-branch-and-push-to-remote-often" class="md-nav__link">
+    Step 3: Work on the individual branch and push to remote often
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-merge-the-individual-branch-back-into-the-feature-branch" class="md-nav__link">
+    Step 4: Merge the individual branch back into the feature branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-pr-from-feature-branch-into-develop" class="md-nav__link">
+    Step 5: PR from feature branch into develop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-clean-up-local-branches" class="md-nav__link">
+    Step 6: Clean up local branches
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="postsgitflowpart2_title">{{ posts.gitflow.part2_title }}<a class="headerlink" href="#postsgitflowpart2_title" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>Welcome to part two of my series on GitFlow. If you're just getting
+here, check out part one first. </p>
+<ul>
+<li><a href="../gitflow_1/">{{ posts.gitflow.part1_title }}</a></li>
+<li><a href="./">{{ posts.gitflow.part2_title }}</a></li>
+</ul>
+</div>
+<h2 id="gitflow-and-jira">GitFlow and Jira<a class="headerlink" href="#gitflow-and-jira" title="Permanent link">&para;</a></h2>
+<p>Before going through the step by step guide, I want to mention how GitFlow fits
+into the larger project management context.</p>
+<p>GitFlow works well in conjunction with a ticket tracking software. There are
+plenty of tracking tools out there, such as
+<a href="https://www.atlassian.com/software/jira">Jira</a> or
+<a href="https://trello.com/en-US">Trello</a>. Whatever tool you use, though, each feature
+you work on should correspond to a single ticket which is tracked in your tool
+of choice.</p>
+<p>In Jira, for example, tickets are organized into
+<a href="https://confluence.atlassian.com/jirasoftwarecloud/what-is-a-board-764477964.html">boards</a>,
+which are areas where a team can keep track of all of its open tickets. When
+working on a new feature, I like to create feature branches with the naming
+convention: </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">feature/&lt;board_name&gt;-&lt;ticket_nunmber&gt;_&lt;ticket_description&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<p>For example, say you have a Jira board named <code class="codehilite"><span class="err">ABC</span></code>. If you're working on
+implementing a "cool new feature," you can make a ticket in your <code class="codehilite"><span class="err">ABC</span></code> board
+named "Cool New Feature," and then create a feature branch named
+<code class="codehilite"><span class="err">feature/ABC-101_cool_new_feature</span></code>.</p>
+<h2 id="working-on-a-new-feature-step-by-step-guide">Working on a new feature: step by step guide<a class="headerlink" href="#working-on-a-new-feature-step-by-step-guide" title="Permanent link">&para;</a></h2>
+<p>In Vincent Driessen's original
+<a href="https://nvie.com/posts/a-successful-git-branching-model">post</a> on GitFlow, the
+basic process he described for working on a feature can be broken down into four
+main steps:</p>
+<ol>
+<li>Create a feature branch off of <code class="codehilite"><span class="err">develop</span></code></li>
+<li>Work on that branch and push it to the remote repo</li>
+<li>Merge the feature branch into <code class="codehilite"><span class="err">develop</span></code></li>
+<li>Clean up your branches</li>
+</ol>
+<p>This process works great for small features, but in my experience, it has one
+main drawback: it makes keeping a clean commit history more difficult.</p>
+<p>Ideally, before merging any branch, you should clean up your commit history by
+following the steps in my interactive rebasing <a href="../rebasing/">post</a>. However,
+because rebasing involves rewriting history, it's best not to rebase commits on
+branches that have already been pushed to a remote repository.</p>
+<p>This presents a slight problem when using GitFlow. If you're working on a
+feature branch that takes several days or even weeks to complete, you'll
+naturally want to push your changes to a remote periodically to ensure you don't
+lose any work if your laptop crashes. However, if you do this, then rebasing is
+trickier since you would be rewriting published history.</p>
+<p>The best solution I've found is to do all of your feature work on an
+intermediate individual branch first, and then merge that branch into your
+feature branch. The basic workflow then becomes slightly more involved:</p>
+<ol>
+<li>Create a feature branch off of <code class="codehilite"><span class="err">develop</span></code></li>
+<li>Create an individual branch off of the feature branch</li>
+<li>Work on the individual branch, pushing to the remote often to avoid losing
+     history</li>
+<li>When work on the feature is complete, merge the individual branch into the
+     feature branch</li>
+<li>Then merge the feature branch into <code class="codehilite"><span class="err">develop</span></code></li>
+<li>Clean up your branches</li>
+</ol>
+<p>In the next sections, I'm going to go over each of these steps, and show the
+commands necessary to execute them.</p>
+<h3 id="step-1-create-a-feature-branch">Step 1: Create a feature branch<a class="headerlink" href="#step-1-create-a-feature-branch" title="Permanent link">&para;</a></h3>
+<p>Let's say you're a developer working on the feature <code class="codehilite"><span class="err">ABC-101_cool_new_feature</span></code>.
+Create a feature branch from <code class="codehilite"><span class="err">develop</span></code> and then push the branch:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git checkout develop
+<span class="c1"># Make sure you have the latest changes to develop</span>
+git pull
+git checkout -b feature/ABC-101_cool_new_feature
+<span class="c1"># Set -u (upstream) so that git remembers what remote to push to on this branch</span>
+git push -u origin head
+</pre></div>
+</td></tr></table>
+
+<h3 id="step-2-create-an-individual-branch-off-of-the-feature-branch">Step 2: Create an individual branch off of the feature branch<a class="headerlink" href="#step-2-create-an-individual-branch-off-of-the-feature-branch" title="Permanent link">&para;</a></h3>
+<p>To make your intermediate branch, fork a branch off of the feature branch you
+just created. For the individual branches, I like to use the naming convention:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">&lt;your-name&gt;/&lt;feature-branch-name-after-slash&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<p>So, if Alice is working on the <code class="codehilite"><span class="err">feature/ABC-101_cool_new_feature</span></code> branch, then
+she would make an individual branch named <code class="codehilite"><span class="err">alice/ABC-101_cool_new_feature</span></code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Make sure you&#39;re on the feature/ABC-101_cool_new_feature branch</span>
+git checkout feature/ABC-101_cool_new_feature branch
+git checkout -b alice/ABC-101_cool_new_feature
+git push -u origin head
+</pre></div>
+</td></tr></table>
+
+<h3 id="step-3-work-on-the-individual-branch-and-push-to-remote-often">Step 3: Work on the individual branch and push to remote often<a class="headerlink" href="#step-3-work-on-the-individual-branch-and-push-to-remote-often" title="Permanent link">&para;</a></h3>
+<p>Now that Alice has her individual branch set up, she can work on it and push to
+the remote as often as she likes. I usually make several commits per day and
+push to the remote once at the end of each day. But you can feel free to push as
+often as you like: you never know when your laptop will crash and you'll lose
+important work!</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Do work on the feature and continuously commit changes on the individual</span>
+<span class="c1"># branch and push to the remote</span>
+git add -A
+git commit -m <span class="s1">&#39;My commit message 1&#39;</span>
+<span class="c1"># Do some more work</span>
+git add -A
+git commit -m <span class="s1">&#39;My commit message 2&#39;</span>
+git push
+</pre></div>
+</td></tr></table>
+
+<h3 id="step-4-merge-the-individual-branch-back-into-the-feature-branch">Step 4: Merge the individual branch back into the feature branch<a class="headerlink" href="#step-4-merge-the-individual-branch-back-into-the-feature-branch" title="Permanent link">&para;</a></h3>
+<p>Once all work is done on the feature, commit your changes and push to the remote
+copy of your individual branch one last time. The next step is to merge your
+individual branch into the feature branch.</p>
+<p>Before merging, though, you'll want to make sure you have a clean commit
+history. Your individual branch likely has tens of commits at this point, many
+of which have unhelpful commit messages such as "Fixed a typo" or "Made a small
+update." Rather than keep all of these as separate commits, you should squash
+these into one or a few more meaningful commits before merging. To do this, you
+can follow the instructions in my <a href="../rebasing/">blog post</a> on interactive
+rebasing.</p>
+<p>Once you have cleaned your commit history, then merge the individual branch
+into the feature branch. You'll also want to merge in <code class="codehilite"><span class="err">develop</span></code> to the feature
+branch as well, to make sure there are no merge conflicts between your feature
+code and what's already pushed in <code class="codehilite"><span class="err">develop</span></code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git checkout feature/ABC-101_cool_new_feature
+git pull
+git merge alice/ABC-101_cool_new_feature
+git merge develop
+git push
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may need to resolve some merge conflicts at this stage. I recommend
+<a href="https://sourcegear.com/diffmerge/">DiffMerge</a> for this.</p>
+</div>
+<h3 id="step-5-pr-from-feature-branch-into-develop">Step 5: PR from feature branch into develop<a class="headerlink" href="#step-5-pr-from-feature-branch-into-develop" title="Permanent link">&para;</a></h3>
+<p>Step five is to merge the feature branch into <code class="codehilite"><span class="err">develop</span></code>. To merge the feature
+branch, you can use a <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">pull
+request</a>
+(PR). A PR is a way to submit code changes for review and request that they be
+merged into a branch.</p>
+<p>Once the PR is approved, merge it and then delete the feature branch on the
+remote.</p>
+<h3 id="step-6-clean-up-local-branches">Step 6: Clean up local branches<a class="headerlink" href="#step-6-clean-up-local-branches" title="Permanent link">&para;</a></h3>
+<p>Once the PR is merged, then work on the feature is almost complete. The last
+step is to clean up your local branch list by deleting the old branches.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use <code class="codehilite"><span class="err">git fetch -p</span></code> to prune your
+remote branch list to remove any remote branches you're tracking that no longer
+exist.</p>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git checkout develop
+git pull
+git branch -d alice/ABC-101_cool_new_feature
+git branch -d feature/ABC-101_cool_new_feature
+<span class="c1"># Prune the inactive remote branches</span>
+git fetch -p
+</pre></div>
+</td></tr></table>
+
+<p>The feature is now complete.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>The above shouldn't be taken as the definitive guide or the only way to do
+GitFlow. This is just a method of working on features that has worked well for
+me in the past. Depending on the circumstance, you might find yourself wanting
+to adjust this workflow. For example, if you have a very small feature which
+will only take a day or two, you can of course skip creating an individual
+branch to work on and just work directly on the feature branch.</p>
+<p>Like anything related to workflow, you should design a workflow that fits your
+needs, not shoehorn your needs into a particular workflow.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../gitflow_1/" title="Gitflow Part 1: Overview of Gitflow" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Gitflow Part 1: Overview of Gitflow
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2019 Steve SanPietro
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.8e03edeb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../style/js/extra.js"></script>
+      
+    
+  </body>
+</html>

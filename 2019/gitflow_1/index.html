@@ -1,0 +1,718 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A blog about tech and programming">
+      
+      
+        <link rel="canonical" href="https://sanp.github.io/2019/gitflow_1/">
+      
+      
+        <meta name="author" content="Steve SanPietro">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
+    
+    
+      
+        <title>Gitflow Part 1: Overview of Gitflow - Sanp's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../style/css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#postsgitflowpart1_title" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://sanp.github.io" title="Sanp's Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Sanp's Blog
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Gitflow Part 1: Overview of Gitflow
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://sanp.github.io" title="Sanp's Blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Sanp's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      2019
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        2019
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rebasing/" title="Using interactive rebase to ensure a clean git history" class="md-nav__link">
+      Using interactive rebase to ensure a clean git history
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Gitflow Part 1: Overview of Gitflow
+      </label>
+    
+    <a href="./" title="Gitflow Part 1: Overview of Gitflow" class="md-nav__link md-nav__link--active">
+      Gitflow Part 1: Overview of Gitflow
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitflow-overview" class="md-nav__link">
+    GitFlow Overview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-lifecycle" class="md-nav__link">
+    Development lifecycle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    Branches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-project" class="md-nav__link">
+    Starting a project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-on-a-feature" class="md-nav__link">
+    Working on a feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#releasing-features" class="md-nav__link">
+    Releasing features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-a-hotfix" class="md-nav__link">
+    Making a hotfix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gitflow_2/" title="Gitflow Part 2: Step by step guide to Working on a feature" class="md-nav__link">
+      Gitflow Part 2: Step by step guide to Working on a feature
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitflow-overview" class="md-nav__link">
+    GitFlow Overview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-lifecycle" class="md-nav__link">
+    Development lifecycle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    Branches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-project" class="md-nav__link">
+    Starting a project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-on-a-feature" class="md-nav__link">
+    Working on a feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#releasing-features" class="md-nav__link">
+    Releasing features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-a-hotfix" class="md-nav__link">
+    Making a hotfix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="postsgitflowpart1_title">{{ posts.gitflow.part1_title }}<a class="headerlink" href="#postsgitflowpart1_title" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>Welcome to part one of a two part series on GitFlow. When you're done reading
+part one, check out part two.</p>
+<ul>
+<li><a href="./">{{ posts.gitflow.part1_title }}</a></li>
+<li><a href="../gitflow_2/">{{ posts.gitflow.part2_title }}</a></li>
+</ul>
+</div>
+<h2 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
+<p>GitFlow is a basic <code class="codehilite"><span class="err">git</span></code> workflow created by Vincent Driessen and described in
+his blog post <a href="https://nvie.com/posts/a-successful-git-branching-model">here</a>.
+I've been using a modified version of GitFlow for a while now, and thought it
+would be a good thing to talk about on this blog.</p>
+<p>In part one of this three-part series, I'm going to describe GitFlow and talk
+about how it fits into a team's development lifecycle. In parts two and three,
+I'll discuss working on a new feature, and give a step-by-step breakdown of what
+commands to use when working on a new feature.</p>
+<p>Part two will focus on just one developer working on a feature alone; part
+three will extend that to show how multiple developers can all collaborate on a
+single feature together.</p>
+<div class="admonition disclaimer">
+<p class="admonition-title">Disclaimer</p>
+<p>GitFlow isn't for everyone. It works best when your deployment cycle is
+based around releases. If your team deploys to production every day or
+several times a day, GitFlow may be impractical. In this case, <a href="https://githubflow.github.io/">github
+flow</a> might be a better, more lightweight
+alternative.</p>
+</div>
+<h2 id="gitflow-overview">GitFlow Overview<a class="headerlink" href="#gitflow-overview" title="Permanent link">&para;</a></h2>
+<p><img alt="zoomify" class="center" src="../img/gitflow.png" /> <em class="img-caption">Fig. 1: Image taken from <a href="https://nvie.com/posts/a-successful-git-branching-model">here</a>.</em>
+<br></p>
+<h3 id="development-lifecycle">Development lifecycle<a class="headerlink" href="#development-lifecycle" title="Permanent link">&para;</a></h3>
+<p>The basic GitFlow is outlined in Fig. 1. GitFlow assumes that your deployment
+lifecycle is like the following:</p>
+<ul>
+<li>Work is divided into <a href="https://www.atlassian.com/agile/scrum/sprints">sprints</a> </li>
+<li>During a sprint, developers will work on a handful of features</li>
+<li>When all of the sprint's features are finished, they will be packaged into a
+    release</li>
+<li>That release is then deployed to production</li>
+</ul>
+<p>GitFlow helps to accomplish this by having designated branches that correspond
+to the different stages of this lifecycle.</p>
+<h3 id="branches">Branches<a class="headerlink" href="#branches" title="Permanent link">&para;</a></h3>
+<p>Each repo should have two persistent branches which live forever: <code class="codehilite"><span class="err">develop</span></code> and
+<code class="codehilite"><span class="err">master</span></code>. </p>
+<ul>
+<li><code class="codehilite"><span class="err">master</span></code> contains the code for the release which is currently deployed
+     to production. It should never contain anything which is not released.
+     Anything in master, at any given time, is working production code, and
+     every commit to <code class="codehilite"><span class="err">master</span></code> is a new release.</li>
+<li><code class="codehilite"><span class="err">develop</span></code> contains code for the next release. During a sprint, new features
+     are added to <code class="codehilite"><span class="err">develop</span></code> until the sprint ends.</li>
+</ul>
+<p>In addition to <code class="codehilite"><span class="err">develop</span></code> and <code class="codehilite"><span class="err">master</span></code>, there are several short-lived branches
+which are created for a purpose and then deleted once that purpose is served:</p>
+<ul>
+<li><strong>Feature</strong> branches are used to work on a new feature. They are forked off
+    of <code class="codehilite"><span class="err">develop</span></code> and then merged back into <code class="codehilite"><span class="err">develop</span></code> and deleted when work on
+    the feature is complete.</li>
+<li><strong>Release</strong> branches contain all the new features which will be deployed to
+    production in a release. A release branch is basically a bunch of features
+    which will be merged into <code class="codehilite"><span class="err">master</span></code> at the same time. When a sprint ends, a
+    release branch is forked from <code class="codehilite"><span class="err">develop</span></code> and then merged back into <code class="codehilite"><span class="err">master</span></code>
+    and <code class="codehilite"><span class="err">develop</span></code>.</li>
+<li>A <strong>hotfix</strong> is a change that needs to be made immediately. They differ from
+    normal bug fixes in that they can't wait for the next release to be deployed
+    to production. A hotfix branch is forked from <code class="codehilite"><span class="err">master</span></code> and then merged back
+    into <code class="codehilite"><span class="err">develop</span></code> and <code class="codehilite"><span class="err">master</span></code>.</li>
+</ul>
+<h3 id="starting-a-project">Starting a project<a class="headerlink" href="#starting-a-project" title="Permanent link">&para;</a></h3>
+<p>If you're starting a new project from scratch, you can create a repository for
+your project and then clone it to your local. Then create the <code class="codehilite"><span class="err">develop</span></code> branch
+off of <code class="codehilite"><span class="err">master</span></code>, and push it to the remote:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone &lt;repo address&gt; /path/on/local
+<span class="nb">cd</span> /path/on/local
+git checkout -b develop
+<span class="c1"># Set -u (upstream) so that git remembers what remote to push to on this branch</span>
+git push -u origin head
+</pre></div>
+</td></tr></table>
+
+<h3 id="working-on-a-feature">Working on a feature<a class="headerlink" href="#working-on-a-feature" title="Permanent link">&para;</a></h3>
+<p>To work on a new feature, fork a feature branch off of <code class="codehilite"><span class="err">develop</span></code>, as shown in
+Fig. 1. Once all coding and testing are done, you can merge the feature branch
+back into <code class="codehilite"><span class="err">develop</span></code>.</p>
+<p>The specific commands for how to work on a feature branch and merge it back into
+<code class="codehilite"><span class="err">develop</span></code> are described in part <a href="../gitflow_2/">two</a> of this series.</p>
+<h3 id="releasing-features">Releasing features<a class="headerlink" href="#releasing-features" title="Permanent link">&para;</a></h3>
+<p>When you are finished working on all of the features for a release, cut a new
+release branch off of <code class="codehilite"><span class="err">develop</span></code>. A good way to name releases is with <a href="https://semver.org/">semantic
+versioning</a>:</p>
+<ul>
+<li>MAJOR version when you make incompatible API changes,</li>
+<li>MINOR version when you add functionality in a backwards compatible manner, and</li>
+<li>PATCH version when you make backwards compatible bug fixes.</li>
+</ul>
+<p>And a good naming convention for release branches is <code class="codehilite"><span class="err">release/{release number}</span></code>.
+So, if you are releasing version <code class="codehilite"><span class="err">1.2.3</span></code>, you can fork a release branch off of
+develop:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git checkout develop
+git pull
+git checkout -b release/1.2.3
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As shown in Fig. 1, sometimes after creating a new release, you might notice a
+bug that needs to be fixed before merging the release branch. In this case, you
+can fix the bug with a new commit to the release branch, as shown in the
+diagram.</p>
+</div>
+<p>Then, to actually release the release, merge it into <code class="codehilite"><span class="err">master</span></code> and <code class="codehilite"><span class="err">develop</span></code>
+using pull requests (PRs)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>: create one PR from <code class="codehilite"><span class="err">release/1.2.3</span></code> into <code class="codehilite"><span class="err">master</span></code>
+and create a second PR from <code class="codehilite"><span class="err">release/1.2.3</span></code> into <code class="codehilite"><span class="err">develop</span></code>.</p>
+<p>Once these PRs are merged, you can then
+<a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">tag</a> the commits in both
+<code class="codehilite"><span class="err">develop</span></code> and <code class="codehilite"><span class="err">master</span></code> with the version number:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git tag -a <span class="m">1</span>.2.3
+</pre></div>
+</td></tr></table>
+
+<h3 id="making-a-hotfix">Making a hotfix<a class="headerlink" href="#making-a-hotfix" title="Permanent link">&para;</a></h3>
+<p>To make a hotfix, fork a branch off of <code class="codehilite"><span class="err">master</span></code> and then merge it back into
+<code class="codehilite"><span class="err">develop</span></code> and <code class="codehilite"><span class="err">master</span></code>, as shown in Fig. 1. </p>
+<p>Since hotfixes are ultimately merged back into <code class="codehilite"><span class="err">master</span></code>, they are also new
+releases (since every commit to master is a new release). Therefore, like
+release branches, hotfixes should also have a release number. </p>
+<p>Further, because hotfixes are generally small changes, the release version
+number for a hotfix should usually just increment the patch number of the
+version which is currently in <code class="codehilite"><span class="err">master</span></code>. If the change is big enough to increment
+the major or minor version number, it probably shouldn't be a hotfix.</p>
+<p>Hotfix branches should be named with the naming convention:
+<code class="codehilite"><span class="err">hotfix/{release-number}</span></code>. So, if the current version released in <code class="codehilite"><span class="err">master</span></code> is
+version <code class="codehilite"><span class="err">1.2.3</span></code>, your hotfix should be version <code class="codehilite"><span class="err">1.2.4</span></code>, and the branch should be
+named <code class="codehilite"><span class="err">hotfix/1.2.4</span></code>.</p>
+<p>Once the hotfix is completed, follow the same steps for releasing a new release:
+merge the hotfix branch into both <code class="codehilite"><span class="err">develop</span></code> and <code class="codehilite"><span class="err">master</span></code> with two PRs, and then
+tag the commits with the new release number.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>The above was an overview of my take on GitFlow and how it incorporates into a
+full development lifecycle. This is not the only way to do GitFlow; in fact,
+I've made a few changes from Vincent Driessen's original
+<a href="https://nvie.com/posts/a-successful-git-branching-model">post</a> on GitFlow.</p>
+<p>GitFlow is more of a general workflow and you should feel free to tweak it to
+fit your team's needs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Now that you've finished part one of this series, take a look at <a href="../gitflow_2/">part
+two</a>.</p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>A <em>pull request</em> is a way to submit code changes for review and request
+  that they be merged into a branch. For more info, see
+  <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">here</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../rebasing/" title="Using interactive rebase to ensure a clean git history" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Using interactive rebase to ensure a clean git history
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../gitflow_2/" title="Gitflow Part 2: Step by step guide to Working on a feature" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Gitflow Part 2: Step by step guide to Working on a feature
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2019 Steve SanPietro
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.8e03edeb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../style/js/extra.js"></script>
+      
+    
+  </body>
+</html>
