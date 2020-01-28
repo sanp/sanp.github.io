@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#postsgitflowpart2_title" tabindex="1" class="md-skip">
+      <a href="#gitflow-part-2-step-by-step-guide-to-working-on-a-feature" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -464,14 +464,14 @@
               
                 
                 
-                <h1 id="postsgitflowpart2_title">{{ posts.gitflow.part2_title }}<a class="headerlink" href="#postsgitflowpart2_title" title="Permanent link">&para;</a></h1>
+                <h1 id="gitflow-part-2-step-by-step-guide-to-working-on-a-feature">Gitflow Part 2: Step by step guide to Working on a feature<a class="headerlink" href="#gitflow-part-2-step-by-step-guide-to-working-on-a-feature" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
 <p>Welcome to part two of my series on GitFlow. If you're just getting
 here, check out part one first. </p>
 <ul>
-<li><a href="../gitflow_1/">{{ posts.gitflow.part1_title }}</a></li>
-<li><a href="./">{{ posts.gitflow.part2_title }}</a></li>
+<li><a href="../gitflow_1/">Gitflow Part 1: Overview of Gitflow</a></li>
+<li><a href="./">Gitflow Part 2: Step by step guide to Working on a feature</a></li>
 </ul>
 </div>
 <h2 id="gitflow-and-jira">GitFlow and Jira<a class="headerlink" href="#gitflow-and-jira" title="Permanent link">&para;</a></h2>
@@ -622,8 +622,12 @@ git push
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You may need to resolve some merge conflicts at this stage. I recommend
-<a href="https://sourcegear.com/diffmerge/">DiffMerge</a> for this.</p>
+<p>You may need to resolve some merge conflicts at this stage. To do this, you
+can use a merge tool such as <a href="https://sourcegear.com/diffmerge/">DiffMerge</a>.
+You can also use Tim Pope's
+<a href="https://github.com/tpope/vim-fugitive">fugitive</a> plugin to handle merge
+conflicts. For more info on how to do that, see <a href="http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/">this
+screencast</a>.</p>
 </div>
 <h3 id="step-5-pr-from-feature-branch-into-develop">Step 5: PR from feature branch into develop<a class="headerlink" href="#step-5-pr-from-feature-branch-into-develop" title="Permanent link">&para;</a></h3>
 <p>Step five is to merge the feature branch into <code class="codehilite"><span class="err">develop</span></code>. To merge the feature
