@@ -589,9 +589,15 @@ diagram.</p>
 using pull requests (PRs)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>: create one PR from <code class="codehilite"><span class="err">release/1.2.3</span></code> into <code class="codehilite"><span class="err">master</span></code>
 and create a second PR from <code class="codehilite"><span class="err">release/1.2.3</span></code> into <code class="codehilite"><span class="err">develop</span></code>.</p>
 <p>Once these PRs are merged, you can then
-<a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">tag</a> the commits in both
-<code class="codehilite"><span class="err">develop</span></code> and <code class="codehilite"><span class="err">master</span></code> with the version number:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git tag -a <span class="m">1</span>.2.3
+<a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">tag</a> the commits in <code class="codehilite"><span class="err">master</span></code>
+with the version number, and then push the tag to the remote:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git checkout master
+git pull
+git tag <span class="m">1</span>.2.3
+git push origin <span class="m">1</span>.2.3
 </pre></div>
 </td></tr></table>
 
