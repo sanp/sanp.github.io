@@ -479,13 +479,10 @@ part one, check out part two.</p>
 his blog post <a href="https://nvie.com/posts/a-successful-git-branching-model">here</a>.
 I've been using a modified version of GitFlow for a while now, and thought it
 would be a good thing to talk about on this blog.</p>
-<p>In part one of this three-part series, I'm going to describe GitFlow and talk
-about how it fits into a team's development lifecycle. In parts two and three,
-I'll discuss working on a new feature, and give a step-by-step breakdown of what
-commands to use when working on a new feature.</p>
-<p>Part two will focus on just one developer working on a feature alone; part
-three will extend that to show how multiple developers can all collaborate on a
-single feature together.</p>
+<p>In part one of this two-part series, I'm going to describe GitFlow and talk
+about how it fits into a team's development lifecycle. In part two I'll discuss
+working on a new feature, and give a step-by-step breakdown of what commands to
+use when working on a new feature.</p>
 <div class="admonition disclaimer">
 <p class="admonition-title">Disclaimer</p>
 <p>GitFlow isn't for everyone. It works best when your deployment cycle is
@@ -501,7 +498,7 @@ alternative.</p>
 <p>The basic GitFlow is outlined in Fig. 1. GitFlow assumes that your deployment
 lifecycle is like the following:</p>
 <ul>
-<li>Work is divided into <a href="https://www.atlassian.com/agile/scrum/sprints">sprints</a> </li>
+<li>Work is divided into <a href="https://www.atlassian.com/agile/scrum/sprints">sprints</a></li>
 <li>During a sprint, developers will work on a handful of features</li>
 <li>When all of the sprint's features are finished, they will be packaged into a
     release</li>
@@ -511,7 +508,7 @@ lifecycle is like the following:</p>
 to the different stages of this lifecycle.</p>
 <h3 id="branches">Branches<a class="headerlink" href="#branches" title="Permanent link">&para;</a></h3>
 <p>Each repo should have two persistent branches which live forever: <code class="codehilite"><span class="err">develop</span></code> and
-<code class="codehilite"><span class="err">master</span></code>. </p>
+<code class="codehilite"><span class="err">master</span></code>.</p>
 <ul>
 <li><code class="codehilite"><span class="err">master</span></code> contains the code for the release which is currently deployed
      to production. It should never contain anything which is not released.
@@ -603,10 +600,10 @@ git push origin <span class="m">1</span>.2.3
 
 <h3 id="making-a-hotfix">Making a hotfix<a class="headerlink" href="#making-a-hotfix" title="Permanent link">&para;</a></h3>
 <p>To make a hotfix, fork a branch off of <code class="codehilite"><span class="err">master</span></code> and then merge it back into
-<code class="codehilite"><span class="err">develop</span></code> and <code class="codehilite"><span class="err">master</span></code>, as shown in Fig. 1. </p>
+<code class="codehilite"><span class="err">develop</span></code> and <code class="codehilite"><span class="err">master</span></code>, as shown in Fig. 1.</p>
 <p>Since hotfixes are ultimately merged back into <code class="codehilite"><span class="err">master</span></code>, they are also new
 releases (since every commit to master is a new release). Therefore, like
-release branches, hotfixes should also have a release number. </p>
+release branches, hotfixes should also have a release number.</p>
 <p>Further, because hotfixes are generally small changes, the release version
 number for a hotfix should usually just increment the patch number of the
 version which is currently in <code class="codehilite"><span class="err">master</span></code>. If the change is big enough to increment
